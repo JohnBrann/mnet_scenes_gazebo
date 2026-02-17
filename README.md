@@ -1,6 +1,6 @@
 # mnet_scenes_gazebo
 
-## ROS 2 Jazzy package for importing ManipulationNet scenes into Gazebo**
+## ROS 2 Jazzy package for importing ManipulationNet scenes into Gazebo
 
 This package provides a simple way to load predefined ManipulationNet scenes into Gazebo using ROS 2 Jazzy.
 
@@ -23,9 +23,10 @@ colcon build && source install/setup.bash
 ```
 ## Usage
 
-Select which scene to load by editing the configuration file:
+Select which scene to load by editing the configuration file at: **`config/scene.yaml`**.
 
-**`config/scene.yaml`**
+Available scenes are listed in **scenes/metadata.json**
+
 ```yaml
 scene_number: 5
 ```
