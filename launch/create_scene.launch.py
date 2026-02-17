@@ -42,7 +42,7 @@ def load_scene(npz_path):
 
     return model_names, poses
 
-def get_scene_number(yaml_path):
+def get_scene_information(yaml_path):
     if not os.path.exists(yaml_path):
         raise RuntimeError(f"Scene config YAML not found: {yaml_path}")
 
@@ -50,7 +50,16 @@ def get_scene_number(yaml_path):
     with open(yaml_path, "r") as f:
         cfg = yaml.safe_load(f) or {}
 
-    return int(cfg["scene_number"])
+    scene_number = int(cfg["scene_number"])
+
+    spawn_location = cfg.get("spawn_location", {}) or {}
+    spawn_location_ = (
+        float(spawn_location.get("x", 0.0)),
+        float(spawn_location.get("y", 0.0)),
+        float(spawn_location.get("z", 0.0)),
+    )
+
+    return scene_number, spawn_location_
     
 
 pkg_share = get_package_share_directory('mnet_scenes_gazebo')
@@ -67,7 +76,7 @@ set_paths = [
 def generate_launch_description():
     # Read scene_number from yaml file
     scene_yaml = os.path.join(pkg_share, "config", "scene.yaml")
-    scene_number = get_scene_number(scene_yaml)
+    scene_number, spawn_location = get_scene_information(scene_yaml)
 
     # Gets list of object names and poses
     model_names, poses = load_scene(
@@ -100,9 +109,9 @@ def generate_launch_description():
                 arguments=[
                     "-file", sdf_path,
                     "-name", f"object_{i}",
-                    "-x", str(pose[0]),
-                    "-y", str(pose[1]),
-                    "-z", str(pose[2]),
+                    "-x", str(pose[0] + spawn_location[0]),
+                    "-y", str(pose[1] + spawn_location[1]),
+                    "-z", str(pose[2] + spawn_location[2]),
                     "-R", str(roll),
                     "-P", str(pitch),
                     "-Y", str(yaw),

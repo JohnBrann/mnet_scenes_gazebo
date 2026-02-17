@@ -23,13 +23,19 @@ colcon build && source install/setup.bash
 ```
 ## Usage
 
-Select which scene to load by editing the configuration file at: **`config/scene.yaml`**.
+Select which scene to load by editing the configuration file at: **`config/scene.yaml`** Available scenes are listed in **scenes/metadata.json**
 
-Available scenes are listed in **scenes/metadata.json**
+Also choose where in the world to spawn the objects by changing the spawn position values, these are Gazebo x,y,z world coordinates
 
 ```yaml
 scene_number: 5
+spawn_location:
+  x: 0.0
+  y: 0.0
+  z: 0.0
+
 ```
+
 
 Launch the selected scene in Gazebo
 
