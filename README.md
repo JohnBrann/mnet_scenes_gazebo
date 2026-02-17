@@ -1,12 +1,37 @@
 # mnet_scenes_gazebo
 
-## ROS2 Jazzy Package for importing various ManipulationNet Scenes into Gazebo
+## ROS 2 Jazzy package for importing ManipulationNet scenes into Gazebo**
 
-## Configuration 
+This package provides a simple way to load predefined ManipulationNet scenes into Gazebo using ROS 2 Jazzy.
 
-Change the desired scene number to be added in config/scene.yaml. 
+---
 
+## Installation
+Clone the package into your ROS 2 workspace:
+
+```
+cd ~/ros2_ws/src
+git clone https://github.com/JohnBrann/mnet_scenes_gazebo.git
+```
+
+## Build
+
+```
+source /opt/ros/jazzy/setup.bash
+cd ~/ros2_ws
+colcon build && source install/setup.bash
+```
+## Usage
+
+Select which scene to load by editing the configuration file:
+
+**`config/scene.yaml`**
 ```yaml
-ex. scene_number: 5
+scene_number: 5
+```
 
+Launch the selected scene in Gazebo
+
+```
+ros2 launch mnet_scenes_gazebo create_scene.launch.py
 ```
