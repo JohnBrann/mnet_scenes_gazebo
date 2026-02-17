@@ -1,0 +1,19 @@
+{
+    "scene_5":{"level":"easy", "layout":"5.npz"},
+    "scene_9":{"level":"easy", "layout":"9.npz"},
+    "scene_16":{"level":"easy", "layout":"16.npz"},
+    "scene_19":{"level":"easy", "layout":"19.npz"},
+    "scene_22":{"level":"easy", "layout":"22.npz"},
+    "scene_24":{"level":"easy", "layout":"24.npz"},
+    "scene_27":{"level":"easy", "layout":"27.npz"},
+    "scene_64":{"level":"easy", "layout":"64.npz"},
+    "scene_75":{"level":"easy", "layout":"75.npz"},
+    "scene_98":{"level":"easy", "layout":"98.npz"},
+    "scene_138":{"level":"medium", "layout":"138.npz"},
+    "scene_150":{"level":"medium", "layout":"150.npz"},
+    "scene_151":{"level":"medium", "layout":"151.npz"},
+    "scene_184":{"level":"medium", "layout":"184.npz"},
+    "scene_222":{"level":"hard", "layout":"222.npz"},
+    "scene_225":{"level":"hard", "layout":"225.npz"},
+    "scene_255":{"level":"hard", "layout":"255.npz"}
+}
