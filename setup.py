@@ -12,7 +12,7 @@ def package_files(root_dir):
             paths.append((os.path.join('share', package_name, 'models', os.path.dirname(rel)), [full]))
     return paths
 
-package_name = 'create_object_scenes'
+package_name = 'mnet_scenes_gazebo'
 
 model_files = package_files('models')
 

@@ -53,7 +53,7 @@ def get_scene_number(yaml_path):
     return int(cfg["scene_number"])
     
 
-pkg_share = get_package_share_directory('create_object_scenes')
+pkg_share = get_package_share_directory('mnet_scenes_gazebo')
 
 # Directory that contains 003_cracker_box/, 006_mustard_bottle/, etc.
 ycb_root = os.path.join(pkg_share, 'models', 'ycb')
